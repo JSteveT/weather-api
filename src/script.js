@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 document.getElementById('fetchData').addEventListener('click', () => {
 	const location = document.getElementById('locationInput').value;
 
-	const apiKey = 'R8DK5GX8T6J9Y7W2ZR5PPYCGR';
+	const apiKey = process.env.WEATHER_API_KEY;
 	const apiUrl = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=uk&key=${apiKey}&contentType=json`;
 
 	fetch(apiUrl)
